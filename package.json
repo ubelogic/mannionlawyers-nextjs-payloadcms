@@ -1,0 +1,39 @@
+{
+  "name": "mannion-lawyers",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Mannion Lawyers — Family Law for Fathers. Next.js + PayloadCMS.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "generate:types": "payload generate:types",
+    "seed": "tsx scripts/seed.ts",
+    "payload": "payload"
+  },
+  "dependencies": {
+    "@payloadcms/db-mongodb": "3.85.2",
+    "@payloadcms/next": "3.85.2",
+    "@payloadcms/richtext-lexical": "3.85.2",
+    "@payloadcms/storage-vercel-blob": "3.85.2",
+    "cross-env": "^7.0.3",
+    "dotenv": "^17.4.2",
+    "graphql": "^16.9.0",
+    "next": "16.2.10",
+    "payload": "3.85.2",
+    "react": "19.2.7",
+    "react-dom": "19.2.7",
+    "sharp": "^0.33.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.0"
+  },
+  "engines": {
+    "node": ">=18.20.2"
+  }
+}
