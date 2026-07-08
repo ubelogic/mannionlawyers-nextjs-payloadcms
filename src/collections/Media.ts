@@ -17,6 +17,7 @@ export const Media: CollectionConfig = {
     // in payload.config.ts) since the filesystem is not writable/persistent
     // in serverless functions.
     staticDir: 'media',
+    disableLocalStorage: true,
     imageSizes: [
       { name: 'thumbnail', width: 400, height: undefined, position: 'centre' },
       { name: 'card', width: 500, height: 667, position: 'centre' },
