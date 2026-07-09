@@ -44,7 +44,7 @@ export function SiteHeader({ header }: { header: HeaderGlobal }) {
       <div className="container">
         <Link className="brand" href="/">
           {logo?.url ? (
-            <Image src={logo.url} alt={logo.alt} width={160} height={44} className="brand-logo" priority />
+            <Image src={logo.url} alt={logo.alt} width={160} height={44} loader={({ src }) => src} className="brand-logo" priority />
           ) : (
             'Mannion Lawyers'
           )}
