@@ -1,6 +1,7 @@
 import { mongooseAdapter } from '@payloadcms/db-mongodb'
-import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
+import { uploadthingStorage } from '@payloadcms/storage-uploadthing'
+import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import { buildConfig, type Plugin } from 'payload'
@@ -23,18 +24,18 @@ const dirname = path.dirname(filename)
 // uploaded media (logo, hero photo, service images, etc.) must live in an
 // external store. If BLOB_READ_WRITE_TOKEN is set (Vercel Blob), we use it;
 // otherwise uploads fall back to local disk, which is fine for local dev.
-const plugins: Plugin[] = []
-if (process.env.BLOB_READ_WRITE_TOKEN) {
-  plugins.push(
-    vercelBlobStorage({
-      enabled: true,
-      collections: {
-        media: true,
-      },
-      token: process.env.BLOB_READ_WRITE_TOKEN,
-    }),
-  )
-}
+//const plugins: Plugin[] = []
+//if (process.env.BLOB_READ_WRITE_TOKEN) {
+//  plugins.push(
+//    vercelBlobStorage({
+//      enabled: true,
+//      collections: {
+//        media: true,
+//      },
+//      token: process.env.BLOB_READ_WRITE_TOKEN,
+//    }),
+//  )
+//}
 
 export default buildConfig({
   admin: {
@@ -51,7 +52,16 @@ export default buildConfig({
     url: process.env.DATABASE_URI || '',
   }),
   sharp,
-  plugins,
+  plugins: [
+    uploadthingStorage({
+      collections: {
+        media: true,
+      },
+      options: {
+        token: process.env.UPLOADTHING_TOKEN || '',
+      }
+    }) 
+  ],
   cors: ['http://localhost:3000', process.env.NEXT_PUBLIC_SERVER_URL].filter(
     (v): v is string => Boolean(v),
   ),
