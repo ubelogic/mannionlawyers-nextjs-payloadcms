@@ -10,9 +10,11 @@
     "lint": "next lint",
     "generate:types": "payload generate:types",
     "seed": "tsx scripts/seed.ts",
-    "payload": "payload"
+    "payload": "payload",
+    "generate:importmap": "payload generate:importmap"
   },
   "dependencies": {
+    "20": "^3.1.9",
     "@payloadcms/db-mongodb": "3.85.2",
     "@payloadcms/next": "3.85.2",
     "@payloadcms/richtext-lexical": "3.85.2",
