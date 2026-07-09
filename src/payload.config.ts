@@ -51,14 +51,7 @@ export default buildConfig({
     url: process.env.DATABASE_URI || '',
   }),
   sharp,
-  plugins: [
-    vercelBlobStorage({
-      collections: {
-        media: true,
-      },
-      token: process.env.BLOB_READ_WRITE_TOKEN,
-    }),
-  ],
+  plugins,
   cors: ['http://localhost:3000', process.env.NEXT_PUBLIC_SERVER_URL].filter(
     (v): v is string => Boolean(v),
   ),
