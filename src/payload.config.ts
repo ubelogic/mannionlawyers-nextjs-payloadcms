@@ -60,8 +60,7 @@ export default buildConfig({
       options: {
         token: process.env.UPLOADTHING_TOKEN || '',
         acl: 'public-read',
-      },
-      disablePayloadAccessControl: true,
+      }
     }) 
   ],
   cors: ['http://localhost:3000', process.env.NEXT_PUBLIC_SERVER_URL].filter(
