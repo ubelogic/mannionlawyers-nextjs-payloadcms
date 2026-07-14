@@ -154,6 +154,48 @@ export interface HomePageGlobal {
   metaDescription: string
 }
 
+export interface TeamMember {
+  id: string
+  name: string
+  role: string
+  photo?: Media | string
+  bio: unknown // Lexical richText JSON — rendered with <RichText data={...} />
+  videoEmbedUrl?: string
+  order: number
+}
+
+export interface AboutSection {
+  heading: string
+  body: unknown // Lexical richText JSON
+  placement: 'beforePrincipal' | 'afterPrincipal'
+  background: 'plain' | 'alt'
+}
+
+export interface AboutPageGlobal {
+  eyebrow: string
+  headingPlain: string
+  headingAccent: string
+  lede: string
+
+  principalEyebrow: string
+  principal?: TeamMember | string | null
+  showPrincipalVideo: boolean
+
+  sections: AboutSection[]
+
+  ctaHeading: string
+  ctaLede: string
+  ctaButtonLabel: string
+  ctaButtonHref: string
+
+  metaTitle: string
+  metaDescription: string
+}
+
+export function isTeamMember(value: TeamMember | string | null | undefined): value is TeamMember {
+  return Boolean(value) && typeof value === 'object'
+}
+
 export function isMedia(value: Media | string | undefined | null): value is Media {
   return Boolean(value) && typeof value === 'object'
 }

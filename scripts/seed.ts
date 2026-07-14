@@ -13,6 +13,86 @@ import 'dotenv/config'
 import { getPayload } from 'payload'
 import config from '../src/payload.config'
 
+/**
+ * Builds a minimal, valid Lexical editor-state JSON for a richText field
+ * from plain paragraphs. Supports **bold** within a paragraph.
+ * (Payload's richText fields store this JSON shape; the RichText React
+ * component on the frontend renders it back out.)
+ */
+function textNode(text: string, bold = false) {
+  return {
+    type: 'text',
+    version: 1,
+    text,
+    format: bold ? 1 : 0,
+    detail: 0,
+    mode: 'normal',
+    style: '',
+  }
+}
+
+function paragraphFromMarkdownish(line: string) {
+  const parts = line.split('**')
+  const children = parts.map((part, i) => textNode(part, i % 2 === 1)).filter((n) => n.text !== '')
+  return {
+    type: 'paragraph',
+    version: 1,
+    children,
+    direction: 'ltr' as const,
+    format: '' as const,
+    indent: 0,
+    textFormat: 0,
+  }
+}
+
+function listFromItems(items: string[]) {
+  return {
+    type: 'list',
+    version: 1,
+    listType: 'bullet',
+    start: 1,
+    tag: 'ul',
+    direction: 'ltr' as const,
+    format: '' as const,
+    indent: 0,
+    children: items.map((item) => ({
+      type: 'listitem',
+      version: 1,
+      value: 1,
+      direction: 'ltr' as const,
+      format: '' as const,
+      indent: 0,
+      children: [
+        {
+          type: 'text',
+          version: 1,
+          text: item,
+          format: 0,
+          detail: 0,
+          mode: 'normal',
+          style: '',
+        },
+      ],
+    })),
+  }
+}
+
+function richText(blocks: Array<string | { list: string[] }>) {
+  const children = blocks.map((block) =>
+    typeof block === 'string' ? paragraphFromMarkdownish(block) : listFromItems(block.list),
+  )
+  return {
+    root: {
+      type: 'root',
+      children,
+      direction: 'ltr' as const,
+      format: '' as const,
+      indent: 0,
+      version: 1,
+    },
+  }
+}
+
 async function seed() {
   const payload = await getPayload({ config })
 
@@ -285,6 +365,91 @@ async function seed() {
       },
     })
   }
+
+  console.log('Seeding Team Members...')
+  const paul = await payload.create({
+    collection: 'team-members',
+    data: {
+      name: 'Paul Mannion',
+      role: 'Principal Lawyer',
+      bio: richText([
+        'Paul has worked with families and children since 1985 — first in family and counselling services, then as a lawyer admitted to the Supreme Court. He is a father of five, and he built this practice on a conviction the law itself shares: that a child has the right to a meaningful relationship with both parents.',
+        "Forty years in, Paul still takes the first consultation himself wherever he can. He'll tell you plainly what's realistic, what it will cost, and — just as importantly — when a fight isn't worth having. Clients describe him the same way again and again: friendly, direct, and fast to act when it matters.",
+        'He\'s supported by a close team, including solicitor Suvarna and our client-care staff across four offices, so your matter never sits in a queue.',
+      ]),
+      videoEmbedUrl: 'https://www.youtube.com/embed/mq-R0cXfYMU',
+      order: 0,
+    },
+  })
+
+  console.log('Seeding About Page...')
+  await payload.updateGlobal({
+    slug: 'about-page',
+    data: {
+      eyebrow: 'About the firm',
+      headingPlain: 'Most lawyers do family law.',
+      headingAccent: 'fathers',
+      lede:
+        "Mannion Lawyers acts exclusively for dads. That single choice shapes everything — the experience we've built, the way we communicate, and the outcomes we fight for.",
+      principalEyebrow: 'Our principal',
+      principal: paul.id,
+      showPrincipalVideo: true,
+      sections: [
+        {
+          heading: 'Why fathers only?',
+          placement: 'beforePrincipal',
+          background: 'plain',
+          body: richText([
+            "Because the problems fathers face in family law are specific, and specialisation wins cases. A generalist family lawyer might see a recovery order once a year. We deal with parenting disputes, withheld children, relocation threats and access battles every single week. That pattern recognition — knowing what a registrar will ask, what evidence actually moves a court, which fights are worth having — is something you can't get any other way.",
+            'It also means we understand the experience, not just the law. Being kept from your kids while a process grinds on for months is its own kind of grief. You won\'t have to explain that to us. We start from there.',
+            'Our practice is built around two things the Family Law Act itself recognises:',
+            {
+              list: [
+                'A child has the right to a meaningful relationship with both parents.',
+                "Where shared care isn't practical, significant and meaningful time with the other parent must be considered.",
+              ],
+            },
+            "These aren't just legal principles to us — they're the reason the firm exists. We work with you every step of the way so you understand the choices you're making and feel empowered to make them. We strive for justice for fathers.",
+          ]),
+        },
+        {
+          heading: 'What the law actually says',
+          placement: 'afterPrincipal',
+          background: 'plain',
+          body: richText([
+            "Australian family law decides parenting cases on one question: what is in your child's best interests. And the Family Law Act expressly recognises, as part of that question, the benefit to a child of being able to have a relationship with both parents where it is safe to do so.",
+            "That recognition is your foundation — but it doesn't enforce itself. Our job is to make sure the process — mediation, negotiation or court — actually delivers a meaningful relationship in your case, and that the orders made are practical enough to hold up in real life.",
+          ]),
+        },
+        {
+          heading: 'How we work',
+          placement: 'afterPrincipal',
+          background: 'alt',
+          body: richText([
+            'Plain language, fixed fees, and a plan you can see. From the first meeting you\'ll know your options, the realistic range of outcomes, and what each path costs. We support the whole person, too — when clients need counselling, financial guidance or just steadying, we connect them with it. A father who is back on his feet presents better in every room that matters.',
+          ]),
+        },
+        {
+          heading: 'Access to justice matters to us',
+          placement: 'afterPrincipal',
+          background: 'plain',
+          body: richText([
+            'There is a quiet heartbreak happening every day, largely unseen and rarely spoken about. Fathers who love their children deeply are being forced out of their lives — not because they don\'t care, not because they are unsafe, and not because they chose to leave — but because they simply cannot afford to fight.',
+            "Many low-income fathers fall through the gaps. Legal Aid doesn't cover them. Private representation exceeds their means. The result is an impossible choice: navigate a complex, intimidating court process alone, or gradually lose contact with their children.",
+            "This isn't about conflict between parents. It's about access to justice. It's about fairness. It's about children's right to be loved by their fathers and extended families. **No parent should lose their child because they are poor. No child should lose a loving parent because justice has a price tag.**",
+            "Across our four offices we work to support fathers who need help most. If cost is a barrier, talk to us — we'll always have an honest conversation about what's possible.",
+          ]),
+        },
+      ],
+      ctaHeading: 'Talk to someone who gets it.',
+      ctaLede: 'A confidential consultation. No jargon, no judgement, no obligation.',
+      ctaButtonLabel: 'Book a Consultation',
+      ctaButtonHref: '/contact',
+      metaTitle: 'About Mannion Lawyers | Family Law for Fathers',
+      metaDescription:
+        'Mannion Lawyers has worked exclusively with fathers since 2005. Principal lawyer Paul Mannion and his team across NSW and the ACT.',
+    },
+  })
 
   console.log('Done. Visit /admin to review and add real photos.')
   process.exit(0)

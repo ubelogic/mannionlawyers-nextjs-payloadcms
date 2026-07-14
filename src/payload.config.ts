@@ -1,7 +1,6 @@
 import { mongooseAdapter } from '@payloadcms/db-mongodb'
-import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
-import { uploadthingStorage } from '@payloadcms/storage-uploadthing'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
+import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import { buildConfig, type Plugin } from 'payload'
@@ -13,9 +12,11 @@ import { Services } from './collections/Services'
 import { Testimonials } from './collections/Testimonials'
 import { FAQs } from './collections/FAQs'
 import { Offices } from './collections/Offices'
+import { TeamMembers } from './collections/TeamMembers'
 import { Header } from './globals/Header'
 import { Footer } from './globals/Footer'
 import { HomePage } from './globals/HomePage'
+import { AboutPage } from './globals/AboutPage'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -24,25 +25,25 @@ const dirname = path.dirname(filename)
 // uploaded media (logo, hero photo, service images, etc.) must live in an
 // external store. If BLOB_READ_WRITE_TOKEN is set (Vercel Blob), we use it;
 // otherwise uploads fall back to local disk, which is fine for local dev.
-//const plugins: Plugin[] = []
-//if (process.env.BLOB_READ_WRITE_TOKEN) {
-//  plugins.push(
-//    vercelBlobStorage({
-//      enabled: true,
-//      collections: {
-//        media: true,
-//      },
-//      token: process.env.BLOB_READ_WRITE_TOKEN,
-//    }),
-//  )
-//}
+const plugins: Plugin[] = []
+if (process.env.BLOB_READ_WRITE_TOKEN) {
+  plugins.push(
+    vercelBlobStorage({
+      enabled: true,
+      collections: {
+        media: true,
+      },
+      token: process.env.BLOB_READ_WRITE_TOKEN,
+    }),
+  )
+}
 
 export default buildConfig({
   admin: {
     user: Users.slug,
   },
-  collections: [Users, Media, Services, Testimonials, FAQs, Offices],
-  globals: [Header, Footer, HomePage],
+  collections: [Users, Media, Services, Testimonials, FAQs, Offices, TeamMembers],
+  globals: [Header, Footer, HomePage, AboutPage],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
@@ -52,17 +53,7 @@ export default buildConfig({
     url: process.env.DATABASE_URI || '',
   }),
   sharp,
-  plugins: [
-    uploadthingStorage({
-      collections: {
-        media: { disablePayloadAccessControl: true},
-      },
-      options: {
-        token: process.env.UPLOADTHING_TOKEN || '',
-        acl: 'public-read',
-      }
-    }) 
-  ],
+  plugins,
   cors: ['http://localhost:3000', process.env.NEXT_PUBLIC_SERVER_URL].filter(
     (v): v is string => Boolean(v),
   ),
