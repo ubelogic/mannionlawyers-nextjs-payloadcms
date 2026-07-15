@@ -1,6 +1,6 @@
 import { mongooseAdapter } from '@payloadcms/db-mongodb'
-import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
+import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import { buildConfig, type Plugin } from 'payload'
@@ -17,6 +17,8 @@ import { Header } from './globals/Header'
 import { Footer } from './globals/Footer'
 import { HomePage } from './globals/HomePage'
 import { AboutPage } from './globals/AboutPage'
+import { ServicesPage } from './globals/ServicesPage'
+import { SiteSettings } from './globals/SiteSettings'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -44,7 +46,7 @@ export default buildConfig({
     user: Users.slug,
   },
   collections: [Users, Media, Services, Testimonials, FAQs, Offices, TeamMembers],
-  globals: [Header, Footer, HomePage, AboutPage],
+  globals: [Header, Footer, HomePage, AboutPage, ServicesPage, SiteSettings],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {

@@ -16,17 +16,37 @@ export interface Media {
   }
 }
 
+export interface ServiceFAQ {
+  question: string
+  answer: string
+}
+
 export interface Service {
   id: string
   title: string
   slug: string
   summary: string
+  eyebrow?: string
+  anchorId?: string
+  answerFirst?: string
+  detail?: string
+  ctaLabel?: string
   image: Media | string
   showOnHomepage: boolean
   order: number
   megaMenuBlurb?: string
   showInMegaMenu: boolean
   content?: unknown
+  pageHeadingLine2?: string
+  pageHeadingAccent?: string
+  pageLede?: string
+  faqs?: ServiceFAQ[]
+  relatedServices?: (Service | string)[]
+  showUrgentCallout?: boolean
+  finalCtaHeading?: string
+  finalCtaLede?: string
+  metaTitle?: string
+  metaDescription?: string
 }
 
 export interface Testimonial {
@@ -190,6 +210,32 @@ export interface AboutPageGlobal {
 
   metaTitle: string
   metaDescription: string
+}
+
+export interface ServicesPageGlobal {
+  eyebrow: string
+  headingPlain: string
+  headingAccent: string
+  headingSuffix: string
+  ledeText: string
+  urgentServiceSlug?: Service | string | null
+
+  ctaHeading: string
+  ctaLede: string
+  ctaButtonLabel: string
+  ctaButtonHref: string
+
+  metaTitle: string
+  metaDescription: string
+}
+
+export interface SiteSettingsGlobal {
+  mainPhoneDisplay: string
+  mainPhoneHref: string
+}
+
+export function isService(value: Service | string | null | undefined): value is Service {
+  return Boolean(value) && typeof value === 'object'
 }
 
 export function isTeamMember(value: TeamMember | string | null | undefined): value is TeamMember {
