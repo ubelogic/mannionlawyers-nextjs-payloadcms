@@ -37,6 +37,7 @@ export interface Service {
   megaMenuBlurb?: string
   showInMegaMenu: boolean
   content?: unknown
+  pageHeadingLine1?: string
   pageHeadingLine2?: string
   pageHeadingAccent?: string
   pageLede?: string
@@ -180,6 +181,7 @@ export interface TeamMember {
   role: string
   photo?: Media | string
   bio: unknown // Lexical richText JSON — rendered with <RichText data={...} />
+  shortBio?: string
   videoEmbedUrl?: string
   order: number
 }
@@ -232,6 +234,55 @@ export interface ServicesPageGlobal {
 export interface SiteSettingsGlobal {
   mainPhoneDisplay: string
   mainPhoneHref: string
+  consultationFormAction: string
+}
+
+export interface ResourceCta {
+  heading?: string
+  text?: string
+  buttonLabel?: string
+  buttonHref?: string
+}
+
+export interface ResourceSection {
+  heading: string
+  anchorId?: string
+  body: unknown // Lexical richText JSON
+  cta?: ResourceCta
+}
+
+export interface ResourceRelatedItem {
+  label: string
+  description: string
+  href: string
+}
+
+export interface Resource {
+  id: string
+  title: string
+  slug: string
+  eyebrow?: string
+  excerpt: string
+  heroLede?: string
+  order: number
+  articleAuthor?: TeamMember | string | null
+  updatedLabel?: string
+  readTime?: string
+  sections?: ResourceSection[]
+  finalCta?: ResourceCta
+  relatedItems?: ResourceRelatedItem[]
+  metaTitle?: string
+  metaDescription?: string
+  datePublished?: string
+}
+
+export interface ResourcesPageGlobal {
+  eyebrow: string
+  headingPlain: string
+  headingAccent: string
+  ledeText: string
+  metaTitle: string
+  metaDescription: string
 }
 
 export function isService(value: Service | string | null | undefined): value is Service {

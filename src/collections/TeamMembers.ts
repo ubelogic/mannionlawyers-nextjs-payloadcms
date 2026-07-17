@@ -32,6 +32,11 @@ export const TeamMembers: CollectionConfig = {
       required: true,
     },
     {
+      name: 'shortBio',
+      type: 'textarea',
+      admin: { description: 'One or two sentences used in compact contexts like article sidebars.' },
+    },
+    {
       name: 'videoEmbedUrl',
       type: 'text',
       admin: { description: 'Optional. Full iframe src URL for a video message from this person.' },

@@ -95,13 +95,13 @@ export default async function ServiceDetailPage({ params }: Args) {
           <h1>
             {service.pageHeadingLine2 || service.pageHeadingAccent ? (
               <>
-                {service.title}:
+                {service.pageHeadingLine1 || service.title}:
                 <br />
                 {service.pageHeadingLine2}
                 {service.pageHeadingAccent && <em className="accent">{service.pageHeadingAccent}</em>}
               </>
             ) : (
-              `${service.title}.`
+              `${service.pageHeadingLine1 || service.title}.`
             )}
           </h1>
           {service.pageLede ? (

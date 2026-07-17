@@ -13,12 +13,14 @@ import { Testimonials } from './collections/Testimonials'
 import { FAQs } from './collections/FAQs'
 import { Offices } from './collections/Offices'
 import { TeamMembers } from './collections/TeamMembers'
+import { Resources } from './collections/Resources'
 import { Header } from './globals/Header'
 import { Footer } from './globals/Footer'
 import { HomePage } from './globals/HomePage'
 import { AboutPage } from './globals/AboutPage'
 import { ServicesPage } from './globals/ServicesPage'
 import { SiteSettings } from './globals/SiteSettings'
+import { ResourcesPage } from './globals/ResourcesPage'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -45,8 +47,8 @@ export default buildConfig({
   admin: {
     user: Users.slug,
   },
-  collections: [Users, Media, Services, Testimonials, FAQs, Offices, TeamMembers],
-  globals: [Header, Footer, HomePage, AboutPage, ServicesPage, SiteSettings],
+  collections: [Users, Media, Services, Testimonials, FAQs, Offices, TeamMembers, Resources],
+  globals: [Header, Footer, HomePage, AboutPage, ServicesPage, SiteSettings, ResourcesPage],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {

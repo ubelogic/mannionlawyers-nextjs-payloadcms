@@ -446,6 +446,44 @@ async function seed() {
       detail:
         'A recovery order brings your child back to you — and can authorise police to locate and return them. Relocation disputes decide whether one parent can move a child far enough to disrupt your time. Both come down to acting fast and getting the right evidence before the court — exactly what we do every week.',
       ctaLabel: 'Get urgent help',
+      pageHeadingLine1: 'Recovery & relocation',
+      pageHeadingLine2: 'when ',
+      pageHeadingAccent: 'hours',
+      pageLede:
+        'If your child has been taken or withheld, or your ex plans to move them away, the court can order their return or prevent the move — and these applications can be made urgently, sometimes within days. Call us the day it happens, not the week after.',
+      content: richText([
+        { h2: 'What is a recovery order?' },
+        "**A recovery order is a court order requiring a child to be returned — and it can authorise police to find and return them.** Fathers can apply whether or not parenting orders already exist, though existing orders make the path faster. The court can also issue orders preventing the child from being removed again, and in genuine emergencies, applications can be heard urgently. The court wants to see acted-on urgency, a clear picture of the child's circumstances, and a workable plan for their care on return. We put that together fast.",
+        { h2: 'My ex wants to move the kids to another city or state. Can they?' },
+        "**Not unilaterally — relocation that significantly affects your time with the children needs your agreement or a court order.** If you don't agree, the court decides based on your child's best interests, weighing the reasons for the move against the cost to the child's relationship with you. These are winnable cases for fathers. Courts refuse relocations regularly, especially where the child's relationship with dad is strong and the reasons for moving are thin. The worst thing you can do is grumble but not act — consent by inaction is still consent.",
+        { h2: "What if I'm worried about an overseas move?" },
+        '**Act immediately — international cases are far harder to unwind after the fact.** If you believe your child may be taken overseas without your agreement, the court can add their name to the Family Law Watchlist. This alerts the Australian Federal Police at every airport and seaport. This can be done urgently, sometimes the same day. If a child has already been taken to a Hague Convention country, return proceedings are possible — but slow and uncertain. Prevention is the better fight.',
+        { h2: 'What should I do right now?' },
+        "**Three things: write down the timeline while it's fresh, gather your evidence, and call us.** Note dates, messages, and exactly what was said about the move or the withholding. Keep your own communication calm and in writing. Don't retaliate by withholding the children when you next have them — it feels fair and it damages your case. Then get advice the same day. In this area more than any other, the gap between fathers who act in days and fathers who act in months shows up directly in outcomes.",
+      ]),
+      faqs: [
+        {
+          question: 'How fast can a recovery order be made?',
+          answer:
+            "In genuinely urgent cases, an application can be filed and heard within days — occasionally faster where a child's safety or imminent overseas travel is involved. Speed depends heavily on how quickly the evidence is assembled, which is exactly what we do.",
+        },
+        {
+          question: 'Do I need existing parenting orders to apply for a recovery order?',
+          answer:
+            'No. A father without orders can still apply — the court simply deals with the recovery application alongside an application for parenting orders. Existing orders make the breach clear-cut, but their absence is no reason to wait.',
+        },
+        {
+          question: "My ex says she'll move anyway and I can 'see them in the holidays.' Is that legal?",
+          answer:
+            "Not if it significantly cuts across your relationship with the children and you haven't agreed. You can apply for orders preventing the relocation before it happens — which is a far stronger position than seeking the children's return afterwards. Treat the threat itself as the trigger to act.",
+        },
+      ],
+      showUrgentCallout: true,
+      finalCtaHeading: "If this is happening to you right now, don't book — call.",
+      finalCtaLede: "Recovery and relocation matters are won early. Tell us today and we'll tell you today what can be done.",
+      metaTitle: 'Recovery & Relocation Orders | Mannion Lawyers',
+      metaDescription:
+        'Urgent legal action when your child has been taken, withheld, or is about to be moved. Recovery orders and relocation advice for fathers across NSW and the ACT.',
     },
     {
       title: 'Child support',
@@ -459,6 +497,43 @@ async function seed() {
       detail:
         'We handle Services Australia assessments, objections, reviews, and change-of-assessment applications, plus private agreements that give both parents certainty. What you pay — or receive — should be fair. We make sure it is.',
       ctaLabel: 'Review your assessment',
+      pageHeadingLine2: 'fair is the ',
+      pageHeadingAccent: 'whole point',
+      pageLede:
+        "Services Australia sets child support using a formula — but the inputs can be wrong, and you can challenge the assessment. If your assessment doesn't reflect your real income, your nights of care, or your circumstances, you can do something about it. Supporting your kids and being treated fairly are not in conflict.",
+      content: richText([
+        { h2: 'How is child support calculated?' },
+        "**Services Australia uses a formula built on both parents' taxable incomes, the number and ages of the children, and the percentage of nights each parent cares for them.** Two inputs matter most. First, your care percentage: each extra band of overnight care reduces what you pay, because you're meeting costs directly during that time. This is one more reason parenting arrangements and child support should be handled together, not separately. Second, the income figures: if your ex's income is understated, or yours is overstated by a one-off year, the assessment is wrong from the start.",
+        { h2: "The assessment doesn't reflect reality. What can I do?" },
+        "**Object, or apply for a change of assessment — there are ten recognised special-circumstance grounds.** Common grounds for fathers: the other parent's real earning capacity is higher than their declared income; your contact costs are high (travel after a relocation, for instance); you're meeting costs directly, like school fees or health insurance; or the assessment doesn't reflect your actual income after a job loss. Strict timeframes apply to objections. How the application is argued genuinely affects the outcome — this is detail work, and it's work we do every day.",
+        { h2: 'Can we just agree on an amount privately?' },
+        "**Yes — through a limited or binding child support agreement, which can give both parents certainty the formula never will.** A binding agreement — where each parent gets independent legal advice — can fix amounts, cover specifics like school fees or orthodontics, and stop the annual reassessment lottery. For self-employed fathers and those with variable income, an agreement is often far better than the formula. We draft them, and just as importantly, we'll tell you when an agreement on the table is one you shouldn't sign.",
+        { h2: "What if I genuinely can't pay right now?" },
+        "**Deal with it head-on — arrears don't disappear — but assessments can be corrected and payments arranged.** If your income has dropped, an estimate can adjust your assessment going forward. If debt has accrued, negotiated payment arrangements prevent enforcement action like tax-refund interception or departure prohibition orders. What never works is ignoring it: child support debt is among the most aggressively enforced debts in Australia. Engaging early, with the right paperwork, keeps you in control of the conversation.",
+      ]),
+      faqs: [
+        {
+          question: 'My ex refuses to work but could. Do I just pay more forever?',
+          answer:
+            "Not necessarily. A change of assessment can be sought where a parent's earning capacity — not just their declared income — should be taken into account. These applications turn on evidence of qualifications, work history and genuine opportunities, and they succeed regularly when properly prepared.",
+        },
+        {
+          question: 'Does paying child support guarantee me time with my kids?',
+          answer:
+            "No — and the reverse is also true: being behind on child support doesn't reduce your right to see your children. The two systems are legally separate. If you're paying faithfully but being denied time, that's a parenting matter, and we can act on it.",
+        },
+        {
+          question: "I'm self-employed and my income swings year to year. How does that work?",
+          answer:
+            "Formula assessments handle variable income badly. Self-employed fathers are prime candidates for regular income estimates or a binding agreement that sets sensible fixed amounts. We'll look at your figures and tell you which puts you in the fairest position.",
+        },
+      ],
+      showUrgentCallout: true,
+      finalCtaHeading: "Paying fairly shouldn't mean paying blindly.",
+      finalCtaLede: "Bring us your assessment. We'll tell you within one conversation whether it's worth challenging.",
+      metaTitle: 'Child Support for Fathers | Mannion Lawyers',
+      metaDescription:
+        'Child support assessments, change of assessment applications, private agreements and enforcement — making sure what you pay or receive is actually fair.',
     },
     {
       title: 'Property settlement',
@@ -472,6 +547,44 @@ async function seed() {
       detail:
         "We handle the full settlement: identifying and valuing the asset pool (including super and businesses), negotiating the split, and locking it in so it can't be undone. Strict time limits apply — 12 months after divorce, 2 years after a de facto separation — so don't let a settlement drift.",
       ctaLabel: "Protect what you've built",
+      pageHeadingLine2: "protecting what you've ",
+      pageHeadingAccent: 'built',
+      pageLede:
+        "Property is not automatically split 50/50 in Australia. The split depends on contributions, future needs, and what's fair — and how your case is presented genuinely changes the outcome. Strict time limits also apply.",
+      content: richText([
+        { h2: 'How is property actually divided?' },
+        '**Through a four-step process: identify the pool, assess contributions, weigh future needs, and check the result is just and equitable.** The pool includes everything — the house, savings, superannuation, businesses, vehicles, and debts — regardless of whose name they\'re in. Contributions cover both financial (income, deposits, inheritances) and non-financial (homemaking, parenting, renovations you did yourself). Future needs adjust for income capacity, health, age, and who cares for the children. Each step is argued. That\'s exactly why representation matters.',
+        { h2: "I earned most of the money. Doesn't that count?" },
+        "**It counts — alongside everything else.** The law treats homemaking and parenting as real contributions, so a father who was the sole earner won't simply receive everything he paid for. Financial contributions are weighed seriously — particularly assets you brought into the relationship, inheritances, and post-separation earnings. Fathers lose cases unnecessarily when contributions were never properly documented. We document your contributions thoroughly — including the non-financial ones fathers routinely undersell: the renovation, the school runs, the years of weekend parenting.",
+        { h2: 'What about my superannuation and my business?' },
+        "**Both are part of the pool — and both reward careful handling.** Super can be split without being cashed out. That opens up trades: many fathers keep the family home or business by conceding more super, or vice versa, depending on age and goals. A business needs a sensible valuation — overstated valuations are one of the most common ways fathers get squeezed, and we know how to challenge them. The right structure here is the difference between a settlement you recover from and one you don't.",
+        { h2: 'How long do I have?' },
+        '**Twelve months from a divorce becoming final, or two years from the end of a de facto relationship.** Miss the deadline and you need the court\'s permission to apply at all — which isn\'t guaranteed. Just as dangerous is informal drift. "She kept the house, I kept my super" arrangements that were never formalised can be reopened years later — often when the other party re-partners or asset values shift. A settlement isn\'t finished until it\'s in consent orders or a binding financial agreement — until then, you\'re exposed.',
+      ]),
+      faqs: [
+        {
+          question: 'Do I lose the house if the kids live with their mum most of the time?',
+          answer:
+            'Not automatically. The children\'s housing is a future-needs factor — one factor among many. It can be met different ways: a larger share of other assets, deferred sale arrangements, or you keeping the home. The outcome is negotiated, not preordained.',
+        },
+        {
+          question: 'Can my ex claim assets I owned before we met?',
+          answer:
+            'Pre-relationship assets go into the pool — but bringing an asset in counts as a contribution credited to you. The longer the relationship, the more that contribution dilutes. How it\'s argued and documented materially affects the result.',
+        },
+        {
+          question: 'We sorted property between ourselves years ago. Am I safe?',
+          answer:
+            "Only if it was formalised through consent orders or a binding financial agreement. Informal splits can be reopened, and time limits can be extended with the court's permission in some cases. If your settlement is a handshake, it's worth one conversation to close that door properly.",
+        },
+      ],
+      showUrgentCallout: true,
+      finalCtaHeading: 'The clock on property claims is already running.',
+      finalCtaLede:
+        'Twelve months from divorce, two years from de facto separation. Find out where you stand while every option is still open.',
+      metaTitle: 'Property Settlement for Fathers | Mannion Lawyers',
+      metaDescription:
+        'How property is divided after separation in Australia. The four-step process, superannuation splitting, the family home, and binding financial agreements.',
     },
     {
       title: 'Consent orders & financial agreements',
@@ -485,6 +598,44 @@ async function seed() {
       detail:
         "The court approves consent orders without anyone attending. They carry the same force as orders made after a trial. Binding financial agreements can be made before, during, or after a relationship. We draft and review both. We'll tell you which suits your situation — and when a deal on the table is one you shouldn't sign.",
       ctaLabel: 'Formalise your agreement',
+      pageHeadingLine1: 'Consent orders & BFAs',
+      pageHeadingLine2: 'make the deal ',
+      pageHeadingAccent: 'stick',
+      pageLede:
+        "An informal agreement with your ex has no legal force — and it can be walked back at any time, usually at the worst possible moment. Consent orders and binding financial agreements turn what you've agreed into something the law will stand behind.",
+      content: richText([
+        { h2: 'What are consent orders?' },
+        "**Consent orders are your agreement, approved by the court, with the same legal force as orders made after a trial — and nobody has to attend a hearing.** They can cover parenting arrangements, property division, superannuation splits, or all of them. You file the application. A registrar checks the parenting terms serve the children's best interests and the property terms are fair. Once approved, the orders are enforceable. For most separated fathers with a workable agreement, this is the cleanest, most cost-effective way to lock it in.",
+        { h2: "What's a binding financial agreement, and when is it better?" },
+        '**A BFA is a private contract — no court approval — that can be made before, during, or after a relationship.** Its strengths are privacy and flexibility: terms a court might not approve, arrangements made before you move in together (the "prenup"), or settlements both parties want kept entirely out of the court system. The trade-off is fragility. A BFA is only binding if strict requirements are met — including genuinely independent legal advice for both parties. Poorly drafted ones get set aside. For most post-separation settlements, consent orders are the right choice. BFAs suit situations where timing or privacy demands it. We\'ll tell you straight which fits your facts.',
+        { h2: "I'm re-partnering. Should I think about this before moving in?" },
+        "**Yes — especially if you came out of the last settlement with assets to protect.** A de facto relationship can give your new partner property claims after as little as two years — or sooner if you have a child together. A BFA made before or early in the relationship can quarantine what you've rebuilt — the house, the super, the business — while still being fair to your partner. Fathers rarely want to raise this conversation; almost every father we've helped through a second settlement wishes he had.",
+        { h2: "Why can't we just write something up ourselves?" },
+        "**Because the document's power comes entirely from how it's made.** A homemade agreement is evidence of intentions, nothing more. Consent orders are only enforceable because a registrar approved them; a BFA is only binding because the formalities — including certified independent legal advice — were strictly met. There's also a protective angle: independent advice means someone whose only job is your interests reads the deal before you sign it. We regularly stop fathers from signing agreements that looked fine and weren't.",
+      ]),
+      faqs: [
+        {
+          question: 'Do consent orders require going to court?',
+          answer:
+            'No hearing and no court appearance — the application is considered by a registrar on the papers. If the terms are fair and properly drafted, orders are usually made within weeks.',
+        },
+        {
+          question: 'Can consent orders or a BFA ever be changed?',
+          answer:
+            "Parenting orders can be varied where circumstances change significantly. Property orders and BFAs are designed to be final, and are only set aside in limited situations — fraud, non-disclosure, or defective formalities. That finality is precisely the point: it's why they protect you.",
+        },
+        {
+          question: "My ex sent me an agreement her lawyer drafted. Should I just sign it?",
+          answer:
+            "Never without your own advice — and for a BFA, you legally can't make it binding without it. A document drafted by your ex's lawyer was drafted to serve your ex's interests. A fixed-fee review is cheap insurance against signing away more than you realise.",
+        },
+      ],
+      showUrgentCallout: true,
+      finalCtaHeading: "A deal isn't done until it's enforceable.",
+      finalCtaLede: "Bring us what you've agreed — or what you've been asked to sign. Fixed-fee drafting and review.",
+      metaTitle: 'Consent Orders & Financial Agreements | Mannion Lawyers',
+      metaDescription:
+        'Turning agreements into legally binding, enforceable documents. Consent orders and binding financial agreements for fathers across NSW and the ACT.',
     },
   ]
 
@@ -504,29 +655,21 @@ async function seed() {
 
   console.log('Linking related services...')
   const bySlug = Object.fromEntries(createdServices.map((s) => [s.slug, s]))
-  if (bySlug['parenting-disputes']) {
-    await payload.update({
-      collection: 'services',
-      id: bySlug['parenting-disputes'].id,
-      data: {
-        relatedServices: [
-          bySlug['separation-divorce']?.id,
-          bySlug['recovery-relocation-orders']?.id,
-          bySlug['child-support']?.id,
-        ].filter(Boolean),
-      },
-    })
+  const relatedMap: Record<string, string[]> = {
+    'parenting-disputes': ['separation-divorce', 'recovery-relocation-orders', 'child-support'],
+    'separation-divorce': ['parenting-disputes', 'recovery-relocation-orders', 'child-support'],
+    'recovery-relocation-orders': ['parenting-disputes', 'separation-divorce', 'child-support'],
+    'child-support': ['parenting-disputes', 'separation-divorce', 'recovery-relocation-orders'],
+    'property-settlement': ['parenting-disputes', 'separation-divorce', 'recovery-relocation-orders'],
+    'consent-orders-agreements': ['parenting-disputes', 'separation-divorce', 'recovery-relocation-orders'],
   }
-  if (bySlug['separation-divorce']) {
+  for (const [slug, relatedSlugs] of Object.entries(relatedMap)) {
+    if (!bySlug[slug]) continue
     await payload.update({
       collection: 'services',
-      id: bySlug['separation-divorce'].id,
+      id: bySlug[slug].id,
       data: {
-        relatedServices: [
-          bySlug['parenting-disputes']?.id,
-          bySlug['recovery-relocation-orders']?.id,
-          bySlug['child-support']?.id,
-        ].filter(Boolean),
+        relatedServices: relatedSlugs.map((s) => bySlug[s]?.id).filter(Boolean),
       },
     })
   }
@@ -635,6 +778,205 @@ async function seed() {
       metaTitle: 'About Mannion Lawyers | Family Law for Fathers',
       metaDescription:
         'Mannion Lawyers has worked exclusively with fathers since 2005. Principal lawyer Paul Mannion and his team across NSW and the ACT.',
+    },
+  })
+
+  console.log('Seeding Resources...')
+  const resources = [
+    {
+      title: "Father's rights in Australia: what every dad needs to know",
+      slug: 'fathers-rights-australia',
+      eyebrow: "Fathers' rights",
+      excerpt:
+        'What the Family Law Act actually says, the myths about fathers in family court, and what to do immediately after separation.',
+    },
+    {
+      title: 'Child custody for fathers: how parenting arrangements are decided',
+      slug: 'child-custody-fathers',
+      eyebrow: 'Parenting',
+      excerpt:
+        'Parenting orders vs plans, equal time, overnight arrangements, and the evidence that actually helps your case.',
+    },
+    {
+      title: "What to do if you're being kept from your children",
+      slug: 'kept-from-children',
+      eyebrow: 'Parenting',
+      excerpt:
+        'How to document denied contact, when to go to court urgently, and the mistakes fathers make that hurt their case.',
+    },
+    {
+      title: 'Family court for fathers: a step-by-step guide',
+      slug: 'family-court-guide',
+      eyebrow: 'Court process',
+      excerpt:
+        'From mediation requirements through to final orders — what to expect at every stage, with realistic timelines and costs.',
+    },
+    {
+      title: 'Child support explained for fathers',
+      slug: 'child-support-explained',
+      eyebrow: 'Child support',
+      excerpt:
+        "How child support is calculated, how shared care affects payments, and how to change an assessment that isn't fair.",
+    },
+    {
+      title: 'Property settlement after separation: what fathers need to know',
+      slug: 'property-settlement-fathers',
+      eyebrow: 'Property',
+      excerpt:
+        'The four-step process, superannuation splitting, the family home, time limits, and binding financial agreements.',
+      heroLede:
+        "Property settlement is not about splitting everything down the middle. It's about reaching a result that is just and equitable — and knowing how to get there.",
+      articleAuthor: paul.id,
+      updatedLabel: 'Updated June 2026',
+      readTime: '10 min read',
+      datePublished: '2026-06-12',
+      sections: [
+        {
+          heading: 'Who gets what?',
+          anchorId: 'who-gets-what',
+          body: richText([
+            'Australian family law does not use a fixed formula for property division. There is no rule that says each party gets 50%. Instead, the court asks what is "just and equitable" given the particular circumstances of the relationship — and reaches a result that may be anywhere along that spectrum.',
+            'In practice, outcomes vary considerably. Short relationships with few joint assets tend toward a more even or contributions-based split. Long relationships, particularly where one parent has been the primary carer and earner respectively, may result in adjustments that reflect those different roles. The starting point is always the actual contributions each party made — financial and non-financial — and the future needs of each party.',
+            "One common misconception: property you brought into the relationship or inherited during it is not automatically protected. All property owned by either party — regardless of when it was acquired or whose name it is in — is part of the asset pool to be divided. How a particular asset is treated depends on when it was acquired, its current value, and the overall circumstances of the relationship.",
+          ]),
+          cta: {
+            heading: "Worried about protecting what you've built?",
+            text: "We'll give you an honest picture of what's in the pool, what's likely, and how to approach settlement strategically.",
+            buttonLabel: 'Property settlement services',
+            buttonHref: '/property-settlement',
+          },
+        },
+        {
+          heading: 'The four-step property settlement process',
+          anchorId: 'four-steps',
+          body: richText([
+            'Courts use a structured four-step process to arrive at a property settlement. Understanding it helps you understand what matters and where leverage sits.',
+            '**Step 1 — Identify and value the asset pool.** Every asset and liability owned by either party is identified and valued. This includes real estate, vehicles, superannuation, shares, business interests, bank accounts, and debts. Full and frank financial disclosure is required from both parties — concealing assets is a serious matter that courts treat severely.',
+            '**Step 2 — Assess contributions.** The court considers what each party contributed to the relationship — both financial contributions (income, assets brought in, inheritances) and non-financial contributions (homemaking, parenting, unpaid work in a family business). Neither type of contribution automatically trumps the other. A parent who spent years as the primary carer while the other built a career has made substantial contributions — they are just harder to put a dollar value on.',
+            "**Step 3 — Adjust for future needs.** The court then considers factors that affect each party's capacity to meet their future needs. These include: the age and health of each party, their income and earning capacity going forward, whether one party has primary care of children (and the financial impact that has), and the duration of the relationship. Adjustments at this step can significantly shift a settlement from the contributions position.",
+            '**Step 4 — Is the outcome just and equitable?** The court asks whether the proposed division, having regard to all of the above, is just and equitable overall. This is a check on the process — the court is not bound to reach a particular figure even if the formula would suggest one.',
+          ]),
+          cta: {
+            heading: 'Not sure where you sit in the four-step process?',
+            text: "We'll walk you through it with your specific assets and circumstances in mind.",
+            buttonLabel: 'Book a consultation',
+            buttonHref: '/contact',
+          },
+        },
+        {
+          heading: 'Superannuation splitting',
+          anchorId: 'superannuation',
+          body: richText([
+            'Superannuation is treated as property in Australian family law and is subject to division. It is not automatically split 50/50 — it is part of the asset pool and is divided as part of the overall settlement.',
+            "Superannuation is typically split by a superannuation splitting order, which directs the trustee of one party's fund to transfer a specified amount to the other party's nominated fund. The split takes effect immediately in accumulation funds; in defined benefit funds, the mechanism is more complex.",
+            'A few things fathers commonly misunderstand about super splitting:',
+            {
+              list: [
+                'A super split does not mean you lose access to funds immediately — they remain in superannuation until the other party reaches preservation age',
+                "The other party's super is also part of the pool — if they have a larger balance, that affects the overall outcome",
+                'Super splitting must be formally documented through a court order or binding financial agreement — a verbal agreement about super has no legal effect',
+              ],
+            },
+          ]),
+        },
+        {
+          heading: 'The family home',
+          anchorId: 'family-home',
+          body: richText([
+            'The family home is often the largest single asset in a property settlement — and one of the most emotionally charged. Common outcomes include:',
+            {
+              list: [
+                'Sale and division of proceeds — the cleanest outcome, allowing both parties to move forward with liquid assets',
+                "One party buys out the other — typically requires refinancing the mortgage in one name alone; the lender's approval is required",
+                'Deferred sale — the home is not sold immediately, usually to provide stability for children while they are young, with a sale (and division) triggered by a specified future event',
+              ],
+            },
+            'Where children are involved, the parent with primary care often seeks to remain in the family home. Courts consider this but do not automatically grant it — the financial practicality of maintaining the home on a single income and the overall fairness of the settlement both matter.',
+            'If you are the father who has moved out of the family home, do not assume you have lost your interest in it. Your ownership stake continues until the property is formally dealt with by settlement or court order. Continuing to pay the mortgage is legally complex — get advice on your position and obligations.',
+          ]),
+          cta: {
+            heading: 'Moved out of the family home?',
+            text: "Your interest in the property does not disappear. We'll advise you on how to protect it.",
+            buttonLabel: 'Talk to us',
+            buttonHref: '/contact',
+          },
+        },
+        {
+          heading: 'Time limits',
+          anchorId: 'time-limits',
+          body: richText([
+            'This is one of the most important things to know: there are strict time limits on property settlement applications.',
+            {
+              list: [
+                'De facto couples: must apply within 2 years of the end of the relationship',
+                'Married couples: must apply within 12 months of a divorce order becoming final',
+              ],
+            },
+            "Missing the time limit does not make a claim impossible — but it requires the court's permission to file out of time, which is not guaranteed and adds cost and uncertainty. Many fathers delay property settlement because it feels less urgent than parenting matters, then find themselves out of time.",
+            'The critical takeaway: do not allow a property settlement to drift. Even if you reach an informal agreement with the other party, that agreement has no legal effect until it is formalised by consent orders or a binding financial agreement. Without formalisation, either party can resile from the agreement at any time — and your time limit continues to run.',
+          ]),
+        },
+        {
+          heading: 'Binding financial agreements',
+          anchorId: 'bfa',
+          body: richText([
+            'A Binding Financial Agreement (BFA) — sometimes called a prenuptial agreement or "financial agreement" — is a contract between the parties that deals with how property will be divided. BFAs can be made before a relationship, during it, or after separation.',
+            'Unlike consent orders, a BFA does not require court approval. Each party must receive independent legal advice before signing — and the lawyer for each party must provide a signed certificate confirming advice was given. This requirement is not optional; without it, the agreement can be set aside.',
+            'A properly executed BFA provides certainty and privacy — the details of your financial arrangements are not on the public record as they would be with court proceedings. It can be particularly useful where there are complex business interests, significant inherited assets, or where speed and confidentiality matter.',
+            'BFAs can also be set aside by a court in certain circumstances — if there was fraud, duress, or a significant change in circumstances that makes it unjust to enforce. This is why quality of drafting and proper advice at the time of execution matters enormously.',
+          ]),
+        },
+      ],
+      finalCta: {
+        heading: "Protect what you've built.",
+        text: 'Property settlement is one of the most consequential financial events of your life. Getting it wrong is costly and often irreversible. We\'ll make sure you go into it informed and properly represented.',
+        buttonLabel: 'Book a consultation',
+        buttonHref: '/contact',
+      },
+      relatedItems: [
+        {
+          label: 'Property settlement',
+          description: 'Our property settlement legal services',
+          href: '/property-settlement',
+        },
+        {
+          label: 'Consent orders & BFAs',
+          description: 'Making agreements legally binding',
+          href: '/consent-orders-agreements',
+        },
+        {
+          label: 'Child support explained',
+          description: 'How child support is calculated',
+          href: '/resources/child-support-explained',
+        },
+      ],
+      metaTitle: 'Property Settlement After Separation | Mannion Lawyers',
+      metaDescription:
+        'The four-step property settlement process, superannuation splitting, the family home, time limits, and binding financial agreements — explained for fathers.',
+    },
+    {
+      title: "Parenting orders in Australia: a father's guide",
+      slug: 'parenting-orders-guide',
+      eyebrow: 'Parenting',
+      excerpt: 'Types of parenting orders, how to get them, and what to do if the other party is breaching them.',
+    },
+  ]
+  for (const [i, r] of resources.entries()) {
+    await payload.create({ collection: 'resources', data: { ...r, order: i } })
+  }
+
+  console.log('Seeding Resources Page...')
+  await payload.updateGlobal({
+    slug: 'resources-page',
+    data: {
+      eyebrow: 'Resources',
+      headingPlain: 'Guides for fathers',
+      headingAccent: 'navigating family law',
+      ledeText:
+        'Practical, plain-English guides on parenting disputes, property, child support, and what to expect at every stage.',
+      metaTitle: 'Resources for Fathers | Mannion Lawyers',
+      metaDescription:
+        'Practical guides for fathers navigating separation, parenting disputes, property settlement and child support across NSW and the ACT.',
     },
   })
 

@@ -19,5 +19,11 @@ export const SiteSettings: GlobalConfig = {
       defaultValue: '+61247049977',
       admin: { description: 'Digits with country code, for tel: links.' },
     },
+    {
+      name: 'consultationFormAction',
+      type: 'text',
+      defaultValue: 'https://formspree.io/f/xwvjrnvq',
+      admin: { description: 'Formspree (or other) endpoint the sidebar consultation form submits to.' },
+    },
   ],
 }

@@ -89,6 +89,14 @@ export const Services: CollectionConfig = {
           description: 'The service\'s own page at /{slug}.',
           fields: [
             {
+              name: 'pageHeadingLine1',
+              type: 'text',
+              admin: {
+                description:
+                  'Overrides the title in the H1\'s first line, if the page heading uses shorter/different wording than the title (e.g. title "Consent orders & financial agreements" but heading "Consent orders & BFAs"). Leave blank to just use the title.',
+              },
+            },
+            {
               name: 'pageHeadingLine2',
               type: 'text',
               admin: {
